@@ -1,7 +1,7 @@
 // so first we bring in all the dom elements we want to use and then generate a random user
 
 const main = document.getElementById('main');
-const addUserBtn = document.getElementById('add-user');
+const addUserBtn = document.getElementById('add_user');
 const doubleBtn = document.getElementById('double');
 const showMillionairesBtn = document.getElementById('show-millionaires');
 const sortBtn = document.getElementById('sort');
@@ -27,6 +27,20 @@ async function getRandomUser() {
   };
 
   addData(newUser);
+}
+
+// Doubles everyones money
+function doubleMoney() {
+  data = data.map((user) => {
+    return { ...user, money: user.money * 2};
+  });
+  updateDOM();
+}
+
+// Sort users by richests
+function sortByRichest() {
+  data.sort((a,b) => b.money - a.money);
+  updateDOM();
 }
 
 // add new obj to data array 
@@ -59,3 +73,5 @@ function formatMoney(number) {
 
 // event listener
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
