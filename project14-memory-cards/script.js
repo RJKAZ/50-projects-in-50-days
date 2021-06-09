@@ -17,8 +17,11 @@ let currentActiveCard = 0;
 // Store DOM CARDS
 const cardsEl = [];
 
+// Store Card Data
+const cardsData = getCardsData();
+
 // Store card data
-const cardsData = [
+/* const cardsData = [
   {
     question: 'What must a variable begin with?',
     answer: 'A letter, $ or _'
@@ -32,6 +35,7 @@ const cardsData = [
     answer: 'thisIsAVeriable'
   },
 ];
+*/
 
 // create all cards
 function createCards() {
@@ -80,9 +84,18 @@ function updateCurrentText() {
   currentEl.innerText = `${ currentActiveCard + 1}/${cardsEl.length}`;
 }
 
+// Get Cards from local Storage]
+function getCardsData() {
+  const cards = JSON.parse(localStorage.getItem('cards'));
+  return cards === null ? [] : cards;
+}
+
+
 createCards();
 
 // event listeners
+
+// Next Button 
 
 nextBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card left';
@@ -98,6 +111,7 @@ nextBtn.addEventListener('click', () => {
 
 });
 
+// Prev Button 
 prevBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card right';
 
@@ -111,3 +125,25 @@ prevBtn.addEventListener('click', () => {
   updateCurrentText();
 
 });
+
+// Show Add Container 
+
+showBtn.addEventListener('click', () => addContainer.classList.add('show'));
+
+// hide add container
+hideBtn.addEventListener('click', () => addContainer.classList.remove('show'));
+
+// Add new card
+
+addCardBtn.addEventListener('click', () => {
+  const question = questionEl.nodeValue;
+  const answer = answerEl.nodeValue;
+  
+  if(question.trim() && answer.trim()) {
+    const newCard = { question: question, answer: answer }; 
+
+    createCard(newCard);
+  }
+});
+
+//left off at the 7:00 mark
