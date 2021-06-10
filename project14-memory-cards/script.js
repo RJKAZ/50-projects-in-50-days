@@ -90,6 +90,12 @@ function getCardsData() {
   return cards === null ? [] : cards;
 }
 
+// Add card to local storage
+function setCardsData(cards) {
+  localStorage.setItem('cards', JSON.stringify(cards));
+  window.location.reload();
+}
+
 
 createCards();
 
@@ -139,11 +145,25 @@ addCardBtn.addEventListener('click', () => {
   const question = questionEl.nodeValue;
   const answer = answerEl.nodeValue;
   
-  if(question.trim() && answer.trim()) {
+  if (question.trim() && answer.trim()) {
     const newCard = { question: question, answer: answer }; 
 
     createCard(newCard);
+
+    questionEl.value = '';
+    answerEl.value = '';
+
+    addContainer.classList.remove('show');
+
+    cards.Data.push(newCard);
+    setCardsData(cardsData);
   }
 });
 
-//left off at the 7:00 mark
+//Clear cards button
+
+clearBtn.addEventListener('click', () => {
+  localStorage.clear();
+  cardsContainer.innerHTML = '';
+  window.location.reload();
+});
