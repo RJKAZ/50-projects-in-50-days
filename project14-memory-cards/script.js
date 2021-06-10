@@ -43,9 +43,6 @@ function createCards() {
 }
 
 // create a single card in DOM
-function createCard(data, index) {
-  const card = document.createElement('div');
-}
 
 function createCard(data, index) {
   const card = document.createElement('div');
@@ -142,11 +139,11 @@ hideBtn.addEventListener('click', () => addContainer.classList.remove('show'));
 // Add new card
 
 addCardBtn.addEventListener('click', () => {
-  const question = questionEl.nodeValue;
-  const answer = answerEl.nodeValue;
+  const question = questionEl.value;
+  const answer = answerEl.value;
   
   if (question.trim() && answer.trim()) {
-    const newCard = { question: question, answer: answer }; 
+    const newCard = { question, answer }; 
 
     createCard(newCard);
 
@@ -155,7 +152,7 @@ addCardBtn.addEventListener('click', () => {
 
     addContainer.classList.remove('show');
 
-    cards.Data.push(newCard);
+    cardsData.push(newCard);
     setCardsData(cardsData);
   }
 });
