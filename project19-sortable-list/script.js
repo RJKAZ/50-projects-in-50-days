@@ -34,6 +34,8 @@ function createList() {
       console.log(person);
       const listItem = document.createElement('li');
 
+      
+
       listItem.setAttribute('data-index', index);
 
       listItem.innerHTML = `
