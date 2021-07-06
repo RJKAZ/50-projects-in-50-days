@@ -1,0 +1,31 @@
+const msgEl = document.getElementById('msg');
+
+const randonNum = getRandomNumber();
+
+console.log('Number:', randonNum);
+
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+let recognition = new window.SpeechRecognition();
+
+//start recognition and game
+recognition.start();
+
+//capture user speak
+function onSpeak(e) {
+  const msg = e.results[0][0].transcript;
+
+  // writeMessage(msg);
+  // checkNumber(msg);
+}
+
+// Generate Random Number
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 100) + 1;
+}
+
+// speak result
+
+recognition.addEventListener('result', onSpeak);
