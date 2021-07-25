@@ -56,3 +56,46 @@ let challenge3 = "30 days of";
 console.log(challenge3.concat(" of Javascript"))
 //25. Use repeat() method to print 30 Days Of JavaScript 2 times
 console.log(challenge.repeat(challenge));
+
+//Exercise 2
+
+// 1. use console.log to print out the following statement
+console.log("The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.")
+// 2. the same
+console.log("Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."
+)
+
+//3. Check if typeof '10' is exactly equal to 10. If not make it exactly equal
+console.log(typeof "10" === 10); // false
+console.log(typeof 10 === 10); // false
+console.log(typeof "10" === "10"); // false
+// duh, I can't compare the type of of number to its value
+console.log(typeof "10" === "string"); // true
+console.log(typeof 10 === "number"); //true
+
+//4. Check if parseFloat('9.8') is equal to 10 if not make it exactly equal with 10.
+
+console.log(parseFloat('9.8'));
+console.log(Math.round(parseFloat('9.8')));
+
+// 5. Check if 'on' is found in both python and jargon
+var language = 'phyton';
+console.log(language.includes('on'));
+var language2 = 'jargon';
+console.log(language2.includes('on'));
+
+//6. I hope this course is not full of jargon. Check if jargon is in the sentence.
+var sentence2 = " I hope this course is not full of jargon";
+console.log(sentence2.includes('jargon'));
+
+//7. generate a random number between 0 and 100 inclusivley
+function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+console.log(getRandomNumber(0, 50));
+
+//8. generate a random number between 50 and 100 inclusivley
+console.log(getRandomNumber(50, 100));
+
+//9. generate a random number between 0 and 255 inclusivley
+console.log(getRandomNumber(0, 255));
