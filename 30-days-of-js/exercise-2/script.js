@@ -99,3 +99,35 @@ console.log(getRandomNumber(50, 100));
 
 //9. generate a random number between 0 and 255 inclusivley
 console.log(getRandomNumber(0, 255));
+
+//10: Access the 'JavaScript' string characters using a random number 
+
+/*
+11: Use console.log() and escape characters to print the following pattern 
+1 1 1 1 1
+2 1 2 4 8
+3 1 3 9 27
+4 1 4 16 64
+5 1 5 25 125
+*/
+
+let pattern = "1 1 1 1 1\n2 1 2 4 8\n3 1 3 9 27\n4 1 4 16 64\n5 1 5 25 125";
+console.log(pattern);
+
+// 12: Use substr to slice out the phrase 'because because because' from the following sentence "You cannot end a sentecne with because because becasuse is a conjunction"
+let sentence4 = "You cannot end a sentecne with because because becasuse is a conjunction"
+console.log(sentence4.substr(31, 25)); // 31 is where it starts, and the 25 is how many characters to go 
+
+// Level 3
+
+//1. 'Love is the best thing in this world. Some found their love and some are still looking for their love.' Count the number of word love in this sentence.
+let sentence5 = "Love is the best thing in this world. Some found their love and some are still looking for their love"
+console.log(sentence5.match(/love/gi));
+// no clue what the gi does, but if I leave it at G, it will only return 2 loves. Gi returns all 3. 
+
+//2. Use match() to count the number of all because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+
+//3. Clean the following text and find the most frequent word (hint, use replace and regular expressions).
+// const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
+
+// 4. Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
