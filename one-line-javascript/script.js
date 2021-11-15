@@ -45,4 +45,45 @@ console.log(dayDif(new Date('2020-10-21'), new Date('2021-10-22')));
 
 //________________________________________________________________________________________________________________
 
+// 6. Generate Random Hex Colors - self explanitory, simple function to generate hex colors at random
+
+const randomHex = () =>
+  `#${Math.floor(Math.random() * 0xffffff)
+    .toString(16)
+    .padEnd(6, '0')}`;
+
+console.log(randomHex());
+
 //________________________________________________________________________________________________________________
+
+// 7. Check if Provided Day is a Weekday - with this function you can check if the date you pass as the argument is either a weekday or weekend day
+
+const isWeekday = (date) => date.getDay() % 6 !== 0;
+console.log(isWeekday(new Date(2021, 0, 16)));
+
+// not gonna lie, I have no idea how this code is working, no clue what the 0 in new date is supposed to represent
+
+//________________________________________________________________________________________________________________
+
+// 8. Convert Temperature from Fahrenheit to Celsius and vice verse (self explanatory)
+
+const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+const fahrenheitToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+
+console.log(celsiusToFahrenheit(15));
+console.log(fahrenheitToCelsius(70));
+
+//________________________________________________________________________________________________________________
+
+// 9. Check if a User is on an Apple device
+
+const isAppleDevice = /Mac|iPad|iPhone|iPad/.test(navigator.platform);
+console.log(isAppleDevice);
+
+//________________________________________________________________________________________________________________
+
+// 10. Get the time from a date
+
+const timeFromDate = (date) => date.toTimeString().slice(0, 8);
+
+console.log(timeFromDate(new Date(2021, 0, 10, 17, 30, 0)));
