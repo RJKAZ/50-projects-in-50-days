@@ -87,3 +87,50 @@ console.log(isAppleDevice);
 const timeFromDate = (date) => date.toTimeString().slice(0, 8);
 
 console.log(timeFromDate(new Date(2021, 0, 10, 17, 30, 0)));
+
+// 11. Strip HTML from text
+
+// with this function, users can submit a tag based input values. When accepting user inputs, you can strip any HTML elements in the text the user entered with the help of DOMParser
+
+const stripHtml = (html) =>
+  new DOMParser().parseFromString(html, 'text/html').body.textContent || '';
+
+console.log(stripHtml('<h1>Hello <strong>World</strong>!!!</h1>'));
+
+//________________________________________________________________________________________________________________
+
+// 12. Toggle
+
+const toggleElementDisplay = (element) =>
+  (element.style.display = element.style.display === 'none' ? 'block' : 'none');
+
+console.log(toggleElementDisplay(document.body));
+
+//________________________________________________________________________________________________________________
+
+// 13. Reverse a String - You can reverse a string in one line using split, join, and reverse
+
+const stringReverse = (str) => str.split('').reverse().join('');
+
+console.log(stringReverse('Cowabunga'));
+//________________________________________________________________________________________________________________
+
+// 14. Capitalize a String - JavaScript doesn't provide a built in capitalize method, so this one line function will do it
+// to note this only capitalizes the first index.
+
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+console.log(capitalize('i love you'));
+
+//________________________________________________________________________________________________________________
+
+/*
+// 15. Round Decimals to a certain Number of Decimal places. Basicly Rounding demicals to a fixed number of decimal points can be tricky in JavaScript. 
+there is a method toFixed() that kind of does this, but its imperfect and creates all sorts of errors. 
+This method works better
+
+*/
+
+const round = (n, d) => Number(Math.round(n + 'e' + d) + 'e-' + d);
+
+console.log(round(1.005, 2));
