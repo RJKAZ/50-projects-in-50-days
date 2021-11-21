@@ -134,3 +134,54 @@ This method works better
 const round = (n, d) => Number(Math.round(n + 'e' + d) + 'e-' + d);
 
 console.log(round(1.005, 2));
+
+//________________________________________________________________________________________________________________
+
+// 16. Shuffle an Array - you can use the following code to shuffle an array. It uses the sort and random methods
+
+const shuffleArray = (arr) => arr.sort(() => 0.5 - Math.random());
+console.log(shuffleArray([1, 2, 3, 4]));
+
+//________________________________________________________________________________________________________________
+
+// 17. Detect Dark Mode - find out if a user's device is in dark mode
+
+const isDarkMode =
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+console.log(isDarkMode);
+
+//________________________________________________________________________________________________________________
+
+// 18. Get Query Params from URL - you can easily retrieve query parameters from a url by passing, url as the argument of the function
+
+const getParameters = (URL) =>
+  JSON.parse(
+    '{"' +
+      decodeURI(URL.split('?')[1])
+        .replace(/"/g, '\\"')
+        .replace(/&/g, '","')
+        .replace(/=/g, '":"') +
+      '"}'
+  );
+
+getParameters('https://www.google.de/search?q=cars&start=40');
+
+//________________________________________________________________________________________________________________
+
+// 19. Get average of an array of numbers
+
+const average = (arr) => arr.reduce((a, b) => a + b) / arr.length;
+
+console.log(average([21, 56, 122, 67]));
+
+//________________________________________________________________________________________________________________
+
+// 20. Check if the current user has touch events supported
+
+const touchSupported = () => {
+  'ontouchstart' in window ||
+    (window.DocumentTouch && document instanceof window.DocumentTouch);
+};
+
+console.log(touchSupported());
