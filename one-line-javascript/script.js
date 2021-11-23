@@ -185,3 +185,34 @@ const touchSupported = () => {
 };
 
 console.log(touchSupported());
+
+//________________________________________________________________________________________________________________
+
+// 21. Find the Day of the Year
+
+const dayOfYear = (date) =>
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
+console.log(dayOfYear(new Date()));
+
+//________________________________________________________________________________________________________________
+
+// 22. Get value of a browser cookie
+
+const cookie = (name) =>
+  `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
+
+console.log(cookie('_ga'));
+
+//________________________________________________________________________________________________________________
+
+// 23. Clear all browser cookies
+
+const clearCookies = document.cookie
+  .split(';')
+  .forEach(
+    (cookie) =>
+      (document.cookie = cookie
+        .replace(/^ +/, '')
+        .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`))
+  );
