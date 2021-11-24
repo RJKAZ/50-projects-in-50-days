@@ -216,3 +216,28 @@ const clearCookies = document.cookie
         .replace(/^ +/, '')
         .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`))
   );
+
+//________________________________________________________________________________________________________________
+
+// 24. Get a Random Boolean Number - this function will return a boolean using the math.random() method. Math.random will create a random number between 0 and 1,
+//    after we check if it is higher or lower than 0.5. That means its a 50/50 change to get either true or false
+
+const randomBoolean = () => Math.random() >= 0.5;
+
+console.log(randomBoolean());
+
+//________________________________________________________________________________________________________________
+
+// 25. Remove duplicates from an Array
+
+const removeDuplicates = (arr) => [...new Set(arr)];
+
+console.log(removeDuplicates([32, 23, 45, 82, 32]));
+
+//________________________________________________________________________________________________________________
+
+// 26. Clear all browser cookies
+
+//________________________________________________________________________________________________________________
+
+// 27. Clear all browser cookies
