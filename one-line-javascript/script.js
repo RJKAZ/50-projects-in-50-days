@@ -236,8 +236,14 @@ console.log(removeDuplicates([32, 23, 45, 82, 32]));
 
 //________________________________________________________________________________________________________________
 
-// 26. Clear all browser cookies
+// 26. Check if Data is Valid
+const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
 
+console.log(isDateValid('December 17, 1995 03:24:00'));
 //________________________________________________________________________________________________________________
 
-// 27. Clear all browser cookies
+// 27. Get a Random item from an array
+
+const randomArrayItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+console.log(randomArrayItem(['hi', 'a', 'foo', '52', 'hello', '57']));
