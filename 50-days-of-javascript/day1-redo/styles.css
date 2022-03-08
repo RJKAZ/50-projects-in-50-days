@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
+
 * {
   box-sizing: border-box;
 }
@@ -48,10 +49,10 @@ body {
 
 .panel.active h3 {
   opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
+  transition: opaacity 0.3s ease-in 0.4s;
 }
 
-@media (max-width: 480px) {
+@Media(max-width: 480px) {
   .container {
     width: 100vw;
   }
